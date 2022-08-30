@@ -39,7 +39,7 @@ To communicate with an external config server, we're going to need to add a clie
 
 Right-click on the project name in the solution explorer and choose "Manage NuGet packages...". In the package manager window, choose "Browse", then search for `Steeltoe.Extensions.Configuration.ConfigServerCore`, and install.
 
-<img src="~/guides/images/vs-add-configserver.png" alt="Add configuration server library" width="100%">
+![Add configuration server library](../images/vs-add-configserver.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
@@ -68,7 +68,7 @@ builder.AddConfigServer();
 
 Right-click on the 'Controllers' folder, choose "Add" > "Class..." and name it `ValuesController.cs`.
 
-<img src="~/guides/images/vs-new-class.png" alt="Create a new project class" width="100%">
+![Create a new project class](../images/vs-new-class.png)
 
 Open the newly created class file in your IDE and replace the 'using' statements in the file with the one below.
 
@@ -136,9 +136,9 @@ With the data context in place, we are ready to see everything in action. Run th
 
 # [Visual Studio](#tab/visual-studio)
 
-Click the `Debug > Start Debugging` top menu item. You may be prompted to "trust the IIS Express SSL certificate" and install the certificate. It's safe, trust us. Once started, your default browser should open and automatically load the weather forecast endpoint.
+Click the `Debug > Start Debugging` top menu item. You may be prompted to "trust the IIS Express SSL certificate" and install the certificate. Once started, your default browser should open and automatically load the weather forecast endpoint.
 
-<img src="~/guides/images/vs-run-application.png" alt="Run the project" width="50%">
+![Run the project](../images/vs-run-application.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
@@ -152,7 +152,7 @@ dotnet run
 
 With the application running and the weather forecast endpoint loaded your browser should show the following
 
-<img src="~/guides/images/weatherforecast-endpoint.png" alt="WeatherForecast endpoint" width="100%">
+![WeatherForecast endpoint](../images/weatherforecast-endpoint.png)
 
 > [!NOTE]
 > If "Enable OpenAPI support" was checked at project creation, the Swagger endpoint is used as the startup page. Replace "swagger/index.html" with "WeatherForecast" to get the response above.

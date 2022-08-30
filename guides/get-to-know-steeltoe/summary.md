@@ -19,18 +19,18 @@ The previous labs were meant to show you the power of Steeltoe with microservice
 
 ---
 
-### Steeltoe Site (https://Steeltoe.io)
+## Steeltoe Site (https://Steeltoe.io)
 
 - Learn more
 - Get started guides
 - Documentation
 
----
+<!-- ---
 
 ### Training (https://steeltoe.io/training)
 
 - Pivotal Platform Acceleration Lab for .NET Developers
-- Pivotal Certified Developer .NET
+- Pivotal Certified Developer .NET -->
 
 ---
 

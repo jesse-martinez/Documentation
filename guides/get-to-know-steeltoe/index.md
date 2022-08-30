@@ -36,10 +36,10 @@ This lab has 4 exercises to get you familiar with adding Steeltoe to an applicat
 > As you make your way through the labs, the idea is to place your IDE and the lab steps side-by-side. Before continuing with the workshop, go ahead and open your preferred IDE by clicking either the purple Visual Studio icon or the blue VS Code icon in the taskbar.
 
 With Visual Studio as your IDE
-<img src="~/guides/images/strigo-desktop-vs.png" alt="Windows placement with Visual Studio" width="100%">
+![Windows placement with Visual Studio](../images/strigo-desktop-vs.png)
 
 With VS Code as your IDE
-<img src="~/guides/images/strigo-desktop-vscode.png" alt="Windows placement with VS Code" width="100%">
+![Windows placement with VS Code](../images/strigo-desktop-vscode.png)
 
 | [Get started][exercise-1-link] |
 | :----------------------------: |

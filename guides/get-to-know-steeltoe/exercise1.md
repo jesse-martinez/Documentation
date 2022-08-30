@@ -33,16 +33,16 @@ Let's start by creating a brand new ASP.NET Core Web API project.
 # [Visual Studio](#tab/visual-studio)
 
 Select "Create a new project". (If Visual Studio is already open, choose `File > New > Project`.)
-<img src="~/guides/images/vs-get-started.png" alt="Visual Studio - Get Started" width="100%">
+![Visual Studio - Get Started](../images/vs-get-started.png)
 
 Choose "ASP.NET Core Web API" from the default templates.
-<img src="~/guides/images/vs-new-proj.png" alt="Visual Studio New Project" width="100%">
+![Visual Studio New Project](../images/vs-new-proj.png)
 
 The default project name WebApplication1 will be used throughout, but you can rename it.
-<img src="~/guides/images/vs-configure-project.png" alt="Visual Studio - Name Project" width="100%">
+![Visual Studio - Name Project](../images/vs-configure-project.png)
 
 At "Additional information", you can keep the default values.
-<img src="~/guides/images/vs-create-project.png" alt="Visual Studio - Create an API Project" width="100%">
+![Visual Studio - Create an API Project](../images/vs-create-project.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
@@ -67,19 +67,19 @@ Once the project is created and opened in your IDE, the first action is to bring
 
 # [Visual Studio](#tab/visual-studio)
 
-Right-click on the project name in the solution explorer and choose "Manage NuGet packages...". In the package manager window, choose "Browse", then search for `Steeltoe.Management.Endpointcore`, and install.
-<img src="~/guides/images/vs-add-endpointcore.png" alt="Endpointcode NuGet dependency" width="100%">
+Right-click on the project name in the solution explorer and choose "Manage NuGet packages...". In the package manager window, choose "Browse", then search for `Steeltoe.Management.EndpointCore`, and install.
+![EndpointCore NuGet dependency](../images/vs-add-endpointcore.png)
 
 Then search for the `Steeltoe.Extensions.Logging.DynamicLogger` package and install.
-<img src="~/guides/images/vs-add-dynamiclogger.png" alt="Dynamiclogger NuGet dependency" width="100%">
+![DynamicLogger NuGet dependency](../images/vs-add-dynamiclogger.png)
 
 Finally the `Steeltoe.Management.TracingCore` package and install.
-<img src="~/guides/images/vs-add-tracingcore.png" alt="TracingCode NuGet dependency" width="100%">
+![TracingCore NuGet dependency](../images/vs-add-tracingcore.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
 ```powershell
-dotnet add package Steeltoe.Management.Endpointcore
+dotnet add package Steeltoe.Management.EndpointCore
 dotnet add package Steeltoe.Extensions.Logging.DynamicLogger
 dotnet add package Steeltoe.Management.TracingCore
 ```
@@ -141,11 +141,12 @@ To see the trace logging in action, let's add a log message in the "Controllers\
 
 ```csharp
 [HttpGet]
-public IEnumerable<WeatherForecast> Get() {
-	// Testing Steeltoe logging with distributed tracing
-	_logger.LogInformation("Hi there");
+public IEnumerable<WeatherForecast> Get()
+{
+    // Testing Steeltoe logging with distributed tracing
+    _logger.LogInformation("Hi there");
 
-	// ...
+    // ...
 }
 ```
 
@@ -157,7 +158,7 @@ With the packages registered in the application builder, distributed tracing act
 
 Click the `Debug > Start Debugging` top menu item. You may be prompted to "trust the IIS Express SSL certificate" and install the certificate. It's safe, trust us. Once started, your default browser should open and automatically load the weather forecast endpoint.
 
-<img src="~/guides/images/vs-run-application.png" alt="Run the project">
+![Run the project](../images/vs-run-application.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
@@ -171,7 +172,7 @@ dotnet run
 
 With the application running and the weather forecast endpoint loaded, your browser should show the following
 
-<img src="~/guides/images/weatherforecast-endpoint.png" alt="WeatherForecast endpoint" width="100%">
+![WeatherForecast endpoint](../images/weatherforecast-endpoint.png)
 
 > [!NOTE]
 > If "Enable OpenAPI support" was checked at project creation, the Swagger endpoint is used as the startup page. Replace "swagger/index.html" with "WeatherForecast" to get the response above.
@@ -180,7 +181,7 @@ With the application running and the weather forecast endpoint loaded, your brow
 
 Let's look at the health endpoint. Replace `WeatherForecast` with `actuator/health` in the browser address bar. The health page will load with JSON formatted info.
 
-<img src="~/guides/images/health-endpoint.png" alt="Health endpoint" width="100%">
+![Health endpoint](../images/health-endpoint.png)
 
 As we discussed above, the fact that the page loaded (status of 200) is the first communication to the application's platform that it is healthy. Secondarily, the application has output information to help certain platforms gain a deeper knowledge of app health. Learn more about the health endpoint [here](/api/v3/management/health.html).
 
@@ -188,7 +189,7 @@ As we discussed above, the fact that the page loaded (status of 200) is the firs
 
 Now navigate to the info endpoint by replacing `health` with `info` in the address bar.
 
-<img src="~/guides/images/info-endpoint.png" alt="Info endpoint" width="100%">
+![Info endpoint](../images/info-endpoint.png)
 
 We have loaded the bare minimum application info for this example. You could build your own `IInfoContributor` and add all kinds of metadata and connection information. Learn more [here](/api/v3/management/info.html).
 
@@ -199,7 +200,7 @@ Finally, let's look at the log message that was written.
 Go back to the terminal window where the application was started. The logs should be streaming. Locate the following line:
 
 ```plaintext
-[WebApplicaion1, 917e146c942117d2, 917e146c942117d2, true] Hi there
+[WebApplication1, 917e146c942117d2, 917e146c942117d2, true] Hi there
 ```
 
 ---

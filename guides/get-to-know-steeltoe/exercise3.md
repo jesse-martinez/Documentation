@@ -37,10 +37,10 @@ We're going to add a database connection and context using Entity Framework Core
 # [Visual Studio](#tab/visual-studio)
 
 Right-click on the project name in the solution explorer and choose "Manage NuGet packages...". In the package manager window, choose "Browse", then search for `Steeltoe.Connector.EFCore`, and install.
-<img src="~/guides/images/vs-add-efcore.png" alt="Steeltoe EFCore NuGet dependency" width="100%">
+![Steeltoe EFCore NuGet dependency](../images/vs-add-efcore.png)
 
 Then search for the `Microsoft.EntityFrameworkCore.SqlServer` package and install.
-<img src="~/guides/images/vs-add-efsqlserver.png" alt="Microsoft SqlServer EFCore NuGet dependency" width="100%">
+![Microsoft SqlServer EFCore NuGet dependency](../images/vs-add-efsqlserver.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
@@ -59,7 +59,7 @@ Now create a new folder in the project named 'Models'.
 
 Right-click on the project name in the solution explorer, choose "Add" > "New Folder" and name it `Models`.
 
-<img src="~/guides/images/vs-new-folder.png" alt="Create a new project folder" width="100%">
+![Create a new project folder](../images/vs-new-folder.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
@@ -74,7 +74,7 @@ Within that folder, create a new class named "TodoItem.cs". This will serve as a
 
 Right-click on the 'Models' folder, choose "Add" > "Class..." and name it `TodoItem.cs`.
 
-<img src="~/guides/images/vs-new-class.png" alt="Create a new project class" width="100%">
+![Create a new project class](../images/vs-new-class.png)
 
 Open the newly created class file in your IDE and replace the class declaration with the code below. Don't change the 'namespace' part, just the class within the namespace.
 
@@ -94,7 +94,7 @@ Also within that folder, create a new class named 'TodoDbContext.cs'. This class
 
 Right-click on the 'Models' folder, choose "Add" > "Class..." and name it `TodoDbContext.cs`.
 
-<img src="~/guides/images/vs-new-class.png" alt="Create a new project class" width="100%">
+![Create a new project class](../images/vs-new-class.png)
 
 Open the newly created class file in your IDE and reference the 'EntityFrameworkCore' namespace.
 
@@ -153,14 +153,14 @@ Create a new class in the 'Controllers' folder named `TodoItemsController.cs`.
 
 Right-click on the 'Controllers' folder, choose "Add" > "Class..." and name it `TodoItemsController.cs`.
 
-<img src="~/guides/images/vs-new-class.png" alt="Create a new project class" width="100%">
+![Create a new project class](../images/vs-new-class.png)
 
 Open the newly created class file in your IDE and replace the 'using' statements in the file with the ones below.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SteeltoeWebApplication.Models;
+using WebApplication1.Models;
 ```
 
 Replace the class declaration with the code below. Don't change the 'namespace' part, just the class within the namespace.
@@ -268,7 +268,7 @@ With the data context in place, we are ready to see everything in action. Run th
 
 Click the `Debug > Start Debugging` top menu item. You may be prompted to "trust the IIS Express SSL certificate" and install the certificate. It's safe, trust us. Once started, your default browser should open and automatically load the weather forecast endpoint.
 
-<img src="~/guides/images/vs-run-application.png" alt="Run the project" width="100%">
+![Run the project](../images/vs-run-application.png)
 
 # [.NET CLI](#tab/dotnet-cli)
 
@@ -282,7 +282,7 @@ dotnet run
 
 With the application running and the weather forecast endpoint loaded your browser should show the following
 
-<img src="~/guides/images/weatherforecast-endpoint.png" alt="WeatherForecast endpoint" width="100%">
+![WeatherForecast endpoint](../images/weatherforecast-endpoint.png)
 
 > [!NOTE]
 > If "Enable OpenAPI support" was checked at project creation, the Swagger endpoint is used as the startup page. Replace "swagger/index.html" with "WeatherForecast" to get the response above.
@@ -293,7 +293,7 @@ To test the database connection, navigate to the "GET" endpoint where all saved 
 
 You may have noticed in the `TodoItemsController.GetTodoItem` method, that there is a super secret value you can provide to add new list items. Replace `WeatherForecast` with `api/TodoItems/0` in the browser address bar. This page should load successfully and return "Item created". Behind the scenes, you've just added a new ToDo item. To confirm, let's retrieve the saved list of items. Remove the `/0` in the address and load the page. Wow! Now there is one ToDo item retrieved from the database. Awesome!
 
-<img src="~/guides/images/single-todoitem.png" alt="ToDo item retrieved from the database" width="100%">
+![ToDo item retrieved from the database](../images/single-todoitem.png)
 
 ## Stop the application
 
